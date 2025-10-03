@@ -78,7 +78,7 @@ body {
 .hero-trust .trust-item { background: rgba(255,255,255,.06); border: 1px solid var(--muted-500); padding: 10px 12px; border-radius: 12px; text-align: center; }
 
 .hero-visual { display: grid; place-items: center; }
-.hero-media { display: block; width: 100%; max-width: 520px; border-radius: 20px; overflow: hidden; border: 1px solid var(--muted-500); box-shadow: 0 20px 50px rgba(0,0,0,.45); }
+.hero-media { display: block; width: 100%; max-width: 620px; border-radius: 20px; overflow: hidden; border: 1px solid var(--muted-500); box-shadow: 0 20px 50px rgba(0,0,0,.45); }
 .hero-media img { width: 100%; height: auto; display: block; }
 .device-stack { position: relative; width: 320px; height: 320px; }
 .device { position: absolute; width: 120px; height: 120px; border-radius: 20px; display: grid; place-items: center; font-weight: 700; color: #0e1324; background: linear-gradient(135deg, #fff, #d2d7f3); border: 2px solid rgba(255,255,255,.6); box-shadow: 0 10px 30px rgba(0,0,0,.35); }
