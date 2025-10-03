@@ -60,19 +60,35 @@
     });
   }
 
+  // Image fallback handler for stock photos
+  function addImageFallbacks() {
+    document.querySelectorAll('img[data-fallback]')
+      .forEach((img) => {
+        const primary = img.getAttribute('src');
+        const fallback = img.getAttribute('data-fallback');
+        const fallback2 = img.getAttribute('data-fallback2');
+        let triedFallback = false;
+        img.addEventListener('error', () => {
+          if (!triedFallback && fallback) {
+            triedFallback = true;
+            img.src = fallback;
+          } else if (fallback2) {
+            img.src = fallback2;
+          }
+        }, { once: false });
+      });
+  }
+  addImageFallbacks();
+
   // Hero CTA -> focus contact section
   const heroWa = document.getElementById('hero-wa-cta');
   if (heroWa) {
     heroWa.addEventListener('click', (e) => {
-      const formEl = document.getElementById('booking-form');
-      if (formEl) {
+      const contactPanel = document.querySelector('#contact .contact-panel');
+      if (contactPanel) {
         e.preventDefault();
-        const top = formEl.getBoundingClientRect().top + window.scrollY - 70;
+        const top = contactPanel.getBoundingClientRect().top + window.scrollY - 70;
         window.scrollTo({ top, behavior: 'smooth' });
-        setTimeout(() => {
-          const nameInput = document.getElementById('name');
-          nameInput && nameInput.focus();
-        }, 600);
       }
     });
   }
