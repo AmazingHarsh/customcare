@@ -121,15 +121,13 @@ body {
 .reviews .card p { color: var(--text-300); }
 .reviewer { margin-top: 10px; color: var(--text-500); font-size: .95rem; }
 
-/* Contact form */
-.form { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; background: rgba(255,255,255,.05); border: 1px solid var(--muted-500); border-radius: 18px; padding: 18px; }
-.form-row { display: grid; gap: 6px; }
-.form-row.full { grid-column: 1 / -1; }
-label { color: var(--text-300); font-size: .95rem; }
-input, select, textarea { width: 100%; padding: 12px 14px; border-radius: 12px; border: 1px solid var(--muted-500); background: rgba(8,12,26,.65); color: var(--text-100); box-shadow: inset 0 1px 0 rgba(255,255,255,.06); }
-input::placeholder, textarea::placeholder { color: var(--text-500); }
-.form-actions { grid-column: 1 / -1; display: flex; gap: 12px; }
-.form-note { grid-column: 1 / -1; color: var(--text-500); margin: 8px 0 0; font-size: .9rem; }
+/* Contact panel (no form) */
+.contact-panel { display: grid; grid-template-columns: 1.1fr .9fr; gap: 24px; background: rgba(255,255,255,.05); border: 1px solid var(--muted-500); border-radius: 18px; padding: 20px; align-items: center; }
+.contact-copy { display: grid; gap: 14px; }
+.contact-highlights { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; color: var(--text-300); }
+.cta-buttons { display: flex; gap: 12px; }
+.contact-media { display: block; overflow: hidden; border-radius: 14px; border: 1px solid var(--muted-500); }
+.contact-media img { width: 100%; height: auto; display: block; }
 
 /* Footer */
 .site-footer { background: #0a0f1c; border-top: 1px solid var(--muted-500); margin-top: 60px; }
@@ -162,7 +160,7 @@ input::placeholder, textarea::placeholder { color: var(--text-500); }
   .hero-trust { grid-template-columns: 1fr; }
   .card-grid, .feature-grid { grid-template-columns: repeat(2, 1fr); }
   .steps { grid-template-columns: repeat(2, 1fr); }
-  .form { grid-template-columns: 1fr; }
+  .contact-panel { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 520px) {
