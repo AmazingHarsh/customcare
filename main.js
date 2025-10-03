@@ -48,46 +48,7 @@
     return `https://wa.me/${number}?text=${text}`;
   }
 
-  // Booking form -> open WhatsApp
-  const form = document.getElementById('booking-form');
-  if (form) {
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      const phoneEl = form.querySelector('#phone');
-      const nameEl = form.querySelector('#name');
-      const appEl = form.querySelector('#appliance');
-      const issueEl = form.querySelector('#issue');
-      const timeEl = form.querySelector('#time');
-      const areaEl = form.querySelector('#area');
-
-      const userPhone = (phoneEl?.value || '').replace(/\D/g, '');
-      const customerName = (nameEl?.value || '').trim();
-      if (!customerName || userPhone.length !== 10) {
-        alert('Please enter your name and a valid 10-digit mobile number.');
-        return;
-      }
-
-      const appliance = appEl?.value || '';
-      const issue = (issueEl?.value || '').trim();
-      const prefTime = timeEl?.value || 'Anytime';
-      const area = (areaEl?.value || '').trim();
-
-      const lines = [
-        `Name: ${customerName}`,
-        `Mobile: +91 ${userPhone}`,
-        `Appliance: ${appliance}`,
-        issue ? `Issue: ${issue}` : null,
-        `Preferred time: ${prefTime}`,
-        area ? `Area: ${area}` : null,
-        `City: Pune`
-      ].filter(Boolean);
-
-      const msg = `Hi PrimeFix,%0A%0A${lines.join('%0A')}%0A%0APlease confirm the visit.`;
-      const businessPhone = form.getAttribute('data-phone') || DEFAULT_WHATSAPP_PHONE;
-      const link = `https://wa.me/${businessPhone}?text=${msg}`;
-      window.open(link, '_blank');
-    });
-  }
+  // No booking form: hero CTA scroll now targets contact panel
 
   // Floating WhatsApp CTA dynamic message
   const waFloat = document.getElementById('wa-float');
